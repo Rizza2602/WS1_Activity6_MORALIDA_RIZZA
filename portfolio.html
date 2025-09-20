@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>San Rafael Tigaon Camarines Sur – Portfolio</title>
+<style>
+  body {margin:0; font-family:Arial, sans-serif; background:#fafafa;}
+  header {background:#004080; color:#fff; display:flex; align-items:center; padding:10px 20px;}
+  header img.logo {height:60px; margin-right:15px;}
+  header h1 {margin:0; font-size:1.5rem;}
+  nav {margin-left:auto;}
+  nav ul {list-style:none; margin:0; padding:0; display:flex;}
+  nav a {color:#fff; text-decoration:none; padding:10px 15px; display:block;}
+  nav a:hover, nav a.active {background:#0066cc;}
+
+  main {max-width:1200px; margin:auto;}
+  .intro {padding:20px; text-align:center;}
+  .intro p {max-width:800px; margin:auto; line-height:1.6;}
+
+  .filters {text-align:center; margin:20px 0;}
+  .filters button {
+    background:#0D98BA; color:#fff; border:none;
+    padding:8px 16px; margin:5px; border-radius:20px; cursor:pointer;
+  }
+  .filters button:hover {background:#0066cc;}
+
+  .gallery {
+    display:grid;
+    grid-template-columns:repeat(auto-fill,minmax(300px,1fr));
+    gap:20px; padding:20px;
+  }
+  .item {background:#fff; border:1px solid #ddd; border-radius:6px;
+         box-shadow:0 2px 5px rgba(0,0,0,0.1); overflow:hidden;}
+
+  .slides {position:relative; width:100%; height:200px; overflow:hidden;}
+  .slides input {display:none;}
+  .slides img {
+    position:absolute; top:0; left:0; width:100%; height:100%;
+    object-fit:cover; opacity:0; transition:opacity .6s ease;
+  }
+  .slides input:nth-of-type(1):checked ~ img:nth-of-type(1),
+  .slides input:nth-of-type(2):checked ~ img:nth-of-type(2),
+  .slides input:nth-of-type(3):checked ~ img:nth-of-type(3){opacity:1;}
+  .nav-dots {position:absolute; bottom:8px; left:0; right:0;
+             text-align:center; background:rgba(0,0,0,0.4); padding:4px 0;}
+  .nav-dots label {
+    display:inline-block; width:10px; height:10px; margin:0 3px;
+    border-radius:50%; background:#bbb; cursor:pointer;
+  }
+  .slides input:nth-of-type(1):checked ~ .nav-dots label[for$="a"],
+  .slides input:nth-of-type(2):checked ~ .nav-dots label[for$="b"],
+  .slides input:nth-of-type(3):checked ~ .nav-dots label[for$="c"] {background:#fff;}
+
+  .desc-toggle {display:none;}
+  .desc-label {
+    display:block; background:#0D98BA; color:#fff;
+    padding:8px; text-align:center; cursor:pointer;
+  }
+  .desc {display:none; padding:10px; background:#f2f2f2;}
+  .desc-toggle:checked ~ .desc {display:block;}
+
+  .credits, .contact {
+    background:#f9f9f9; padding:20px; margin:40px 20px;
+    border:1px solid #ddd; border-radius:6px;
+  }
+  .contact form {max-width:500px; margin:auto;}
+  .contact input, .contact textarea {
+    width:100%; padding:10px; margin:8px 0;
+    border:1px solid #ccc; border-radius:4px;
+  }
+  .contact button {
+    background:#004080; color:#fff; border:none;
+    padding:10px 20px; cursor:pointer; border-radius:4px;
+  }
+  .contact button:hover {background:#0066cc;}
+
+  footer {background:#f2f2f2; text-align:center; padding:10px; margin-top:40px;}
+</style>
+</head>
+<body>
+
+<header>
+  <img src="logo.png" alt="Barangay Logo" class="logo">
+  <h1>San Rafael Tigaon Camarines Sur</h1>
+  <nav>
+    <ul>
+      <li><a href="home.html">Home</a></li>
+      <li><a href="portfolio.html" class="active">Portfolio</a></li>
+      <li><a href="about.html">About Us</a></li>
+      <li><a href="contact.html">Contact Us</a></li>
+    </ul>
+  </nav>
+</header>
+
+<main>
+  <section class="intro">
+    <h2>Explore San Rafael</h2>
+    <p>
+      Welcome to our community portfolio. Discover scenic views, local businesses,
+      schools, cafés, and cultural landmarks that make San Rafael unique.
+    </p>
+  </section>
+
+  <!-- ===== images ===== -->
+  <div class="gallery">
+    <!-- Card 1 -->
+    <div class="item">
+      <div class="slides">
+        <input type="radio" name="a1" id="a1a" checked>
+        <input type="radio" name="a1" id="a1b">
+        <input type="radio" name="a1" id="a1c">
+        <img src="isarog.jpg" alt="Mt. Isarog View 1">
+        <img src="isarog1.jpg" alt="Mt. Isarog View 2">
+        <img src="isarog2.jpg" alt="Mt. Isarog View 3">
+        <div class="nav-dots">
+          <label for="a1a"></label><label for="a1b"></label><label for="a1c"></label>
+        </div>
+      </div>
+      <input type="checkbox" id="desc1" class="desc-toggle">
+      <label for="desc1" class="desc-label">Mt. Isarog</label>
+      <div class="desc">A beautiful view of Mt. Isarog from our barangay.</div>
+    </div>
+
+    <!-- Card 2 -->
+    <div class="item">
+      <div class="slides">
+        <input type="radio" name="b1" id="b1a" checked>
+        <input type="radio" name="b1" id="b1b">
+        <input type="radio" name="b1" id="b1c">
+        <img src="SRNHS.jpg" alt="School 1">
+        <img src="SRES.jpg" alt="School 2">
+        <img src="annex.webp" alt="School 3">
+        <div class="nav-dots">
+          <label for="b1a"></label><label for="b1b"></label><label for="b1c"></label>
+        </div>
+      </div>
+      <input type="checkbox" id="desc2" class="desc-toggle">
+      <label for="desc2" class="desc-label">Schools</label>
+      <div class="desc">Our local school serving young learners.</div>
+    </div>
+
+    <!-- Card 3 -->
+    <div class="item">
+      <div class="slides">
+        <input type="radio" name="c1" id="c1a" checked>
+        <input type="radio" name="c1" id="c1b">
+        <input type="radio" name="c1" id="c1c">
+        <img src="rosary1.jpg" alt="Rosary Park 1">
+        <img src="rosary.jpg" alt="Rosary Park 2">
+        <img src="rosary2.jpg" alt="Rosary Park 3">
+        <div class="nav-dots">
+          <label for="c1a"></label><label for="c1b"></label><label for="c1c"></label>
+        </div>
+      </div>
+      <input type="checkbox" id="desc3" class="desc-toggle">
+      <label for="desc3" class="desc-label">Rosary Park</label>
+      <div class="desc">A peaceful park where locals gather and pray.</div>
+    </div>
+
+    <!-- Card 4 -->
+    <div class="item">
+      <div class="slides">
+        <input type="radio" name="d1" id="d1a" checked>
+        <input type="radio" name="d1" id="d1b">
+        <input type="radio" name="d1" id="d1c">
+        <img src="Win.jpg" alt="Business 1">
+        <img src="johan.jpg" alt="Business 2">
+        <img src="win2.jpg" alt="Business 3">
+        <div class="nav-dots">
+          <label for="d1a"></label><label for="d1b"></label><label for="d1c"></label>
+        </div>
+      </div>
+      <input type="checkbox" id="desc4" class="desc-toggle">
+      <label for="desc4" class="desc-label">Hardware and Construction supplies</label>
+      <div class="desc">Shops and services that support our community.</div>
+    </div>
+
+    <!-- Card 5 -->
+    <div class="item">
+      <div class="slides">
+        <input type="radio" name="e1" id="e1a" checked>
+        <input type="radio" name="e1" id="e1b">
+        <input type="radio" name="e1" id="e1c">
+        <img src="juancafe2.jpg" alt="Cafe 1">
+        <img src="caligawan.jpg" alt="Cafe 2">
+        <img src="juancafe1.jpg" alt="Cafe 3">
+        <div class="nav-dots">
+          <label for="e1a"></label><label for="e1b"></label><label for="e1c"></label>
+        </div>
+      </div>
+      <input type="checkbox" id="desc5" class="desc-toggle">
+      <label for="desc5" class="desc-label">Barangay Café</label>
+      <div class="desc">A cozy spot for coffee and conversation.</div>
+    </div>
+
+    <!-- Card 6 -->
+    <div class="item">
+      <div class="slides">
+        <input type="radio" name="f1" id="f1a" checked>
+        <input type="radio" name="f1" id="f1b">
+        <input type="radio" name="f1" id="f1c">
+        <img src="church1.jpg" alt="Church 1">
+        <img src="church.jpg" alt="Church 2">
+        <img src="church2.jpg" alt="Church 3">
+        <div class="nav-dots">
+          <label for="f1a"></label><label for="f1b"></label><label for="f1c"></label>
+        </div>
+      </div>
+      <input type="checkbox" id="desc6" class="desc-toggle">
+      <label for="desc6" class="desc-label">San Rafael Church</label>
+      <div class="desc">Historic church and spiritual center of the barangay.</div>
+    </div>
+
+    <!-- Card 7 -->
+    <div class="item">
+      <div class="slides">
+        <input type="radio" name="g1" id="g1a" checked>
+        <input type="radio" name="g1" id="g1b">
+        <input type="radio" name="g1" id="g1c">
+        <img src="tisay.jpg" alt="Market 1">
+        <img src="tisay2.jpg" alt="Market 2">
+        <img src="tisay3.jpg" alt="Market 3">
+        <div class="nav-dots">
+          <label for="g1a"></label><label for="g1b"></label><label for="g1c"></label>
+        </div>
+      </div>
+      <input type="checkbox" id="desc7" class="desc-toggle">
+      <label for="desc7" class="desc-label">Tisay</label>
+      <div class="desc">Found in Caligawan San Rafael</div>
+    </div>
+
+    <!-- Card 8 -->
+    <div class="item">
+      <div class="slides">
+        <input type="radio" name="h1" id="h1a" checked>
+        <input type="radio" name="h1" id="h1b">
+        <input type="radio" name="h1" id="h1c">
+        <img src="zams1.jpg" alt="River 1">
+        <img src="zams.jpg" alt="River 2">
+        <img src="zams2.jpg" alt="River 3">
+        <div class="nav-dots">
+          <label for="h1a"></label><label for="h1b"></label><label for="h1c"></label>
+        </div>
+      </div>
+      <input type="checkbox" id="desc8" class="desc-toggle">
+      <label for="desc8" class="desc-label">Apartelle</label>
+      <div class="desc">Fill cozy place to rest.</div>
+    </div>
+
+    <!-- Card 9 -->
+    <div class="item">
+      <div class="slides">
+        <input type="radio" name="i1" id="i1a" checked>
+        <input type="radio" name="i1" id="i1b">
+        <input type="radio" name="i1" id="i1c">
+        <img src="bh2.jpg" alt="Community Hall 1">
+        <img src="bh.jpg" alt="Community Hall 2">
+        <img src="bh3.jpg" alt="Community Hall 3">
+        <div class="nav-dots">
+          <label for="i1a"></label><label for="i1b"></label><label for="i1c"></label>
+        </div>
+      </div>
+      <input type="checkbox" id="desc9" class="desc-toggle">
+      <label for="desc9" class="desc-label">Barangay Hall</label>
+      <div class="desc">Center for meetings, events, and public announcements.</div>
+    </div>
+  </div>
+
+  <section class="credits">
+    <h3>Credits & Photo Contributors</h3>
+    <p>
+      Images courtesy of local residents and groups such as <strong>Let’s Go Partido+</strong>
+      and participating business owners. Special thanks to community photographers who
+      shared their shots of Mt. Isarog, Rosary Park, and other beloved locations.
+    </p>
+  </section>
+
+  <section class="contact">
+    <h3>Suggest a New Location</h3>
+    <p>Have you discovered a hidden gem in San Rafael? Share it with us!</p>
+    <form action="mailto:barangay@example.com" method="post" enctype="text/plain">
+      <input type="text" name="name" placeholder="Your Name" required>
+      <input type="email" name="email" placeholder="Your Email" required>
+      <textarea name="message" rows="5" placeholder="Describe the place or send us details..." required></textarea>
+      <button type="submit">Send Suggestion</button>
+    </form>
+  </section>
+</main>
+
+<footer>
+  &copy; 2025 San Rafael Tigaon Camarines Sur. All rights reserved.
+</footer>
+
+</body>
+</html>
